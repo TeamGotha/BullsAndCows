@@ -9,6 +9,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{CAC4D411
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BullsAndCows.Desktop.Console", "BullsAndCows.Desktop.Console\BullsAndCows.Desktop.Console.csproj", "{26496E1A-CAD4-43F1-AD3A-2CCC63AFF63D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BullsAndCows.Tests", "BullsAndCows.Tests\BullsAndCows.Tests.csproj", "{48088EB6-7325-4D41-A58A-2EB4AEE20109}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -19,11 +21,16 @@ Global
 		{26496E1A-CAD4-43F1-AD3A-2CCC63AFF63D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{26496E1A-CAD4-43F1-AD3A-2CCC63AFF63D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{26496E1A-CAD4-43F1-AD3A-2CCC63AFF63D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{48088EB6-7325-4D41-A58A-2EB4AEE20109}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{48088EB6-7325-4D41-A58A-2EB4AEE20109}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{48088EB6-7325-4D41-A58A-2EB4AEE20109}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{48088EB6-7325-4D41-A58A-2EB4AEE20109}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{26496E1A-CAD4-43F1-AD3A-2CCC63AFF63D} = {36C2B383-7856-4A88-A254-F46519FB4A60}
+		{48088EB6-7325-4D41-A58A-2EB4AEE20109} = {CAC4D411-46B4-4BBC-AF5B-9757246D3074}
 	EndGlobalSection
 EndGlobal
