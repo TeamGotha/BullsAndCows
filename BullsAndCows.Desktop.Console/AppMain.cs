@@ -4,26 +4,32 @@
     using System.Collections.Generic;
     using System.Text;
 
+    using BullsAndCows.Utils;
+
     static class AppMain
     {
-        static char[] cheatNumber = { 'X', 'X', 'X', 'X' };
-        static Dictionary<string, int> topScoreBoard = new Dictionary<string, int>();
-        static int lastPlayerScore = int.MinValue;
-        static List<KeyValuePair<string, int>> sortedDict = new List<KeyValuePair<string, int>>();
+        private static char[] cheatNumber = { 'X', 'X', 'X', 'X' };
+        private static Dictionary<string, int> topScoreBoard = new Dictionary<string, int>();
+        private static int lastPlayerScore = int.MinValue;
+        private static List<KeyValuePair<string, int>> sortedDict = new List<KeyValuePair<string, int>>();
 
-        static int SortDictionary(KeyValuePair<string, int> a, KeyValuePair<string, int> b)
+        private static readonly ConsoleRenderer Renderer = new ConsoleRenderer();
+
+        private static int SortDictionary(KeyValuePair<string, int> a, KeyValuePair<string, int> b)
         {
             return a.Value.CompareTo(b.Value);
         }
 
-        static void StartGame()
+        private static void StartGame()
         {
-            Console.WriteLine("Welcome to “Bulls and Cows” game. Please try to guess my secret 4-digit number.");
-            Console.WriteLine("Use 'top' to view the top scoreboard, 'restart' to start a new game and 'help' " +
-                              "to cheat and 'exit' to quit the game.");
+            string welcomeMessage = ConfigReader.GetConfigString("Welcome Message");
+            string helpMessage = ConfigReader.GetConfigString("Help Message");
+
+            Renderer.PrintLineMessage(welcomeMessage);
+            Renderer.PrintLineMessage(helpMessage);
         }
 
-        static bool proverka(string num)
+        private static bool proverka(string num)
         {
             int count = 0;
             for (int i = 0; i < 4; i++)
@@ -45,7 +51,7 @@
 
 
 
-        static string GenerateRandomSecretNumber()
+        private static string GenerateRandomSecretNumber()
         {
             StringBuilder secretNumber = new StringBuilder();
             Random rand = new Random();
@@ -60,7 +66,7 @@
             return secretNumber.ToString();
         }
 
-        static void CalculateBullsAndCows(string secretNumber, string guessNumber, ref int bulls, ref int cows)
+        private static void CalculateBullsAndCows(string secretNumber, string guessNumber, ref int bulls, ref int cows)
         {
             List<int> bullIndexes = new List<int>();
             List<int> cowIndexes = new List<int>();
@@ -95,7 +101,7 @@
                 }
             }
         }
-        static char[] RevealNumberAtRandomPosition(string secretnumber, char[] cheatNumber)
+        private static char[] RevealNumberAtRandomPosition(string secretnumber, char[] cheatNumber)
         {
             while (true)
             {
@@ -115,7 +121,7 @@
                 }
             }
         }
-        static void EnterScoreBoard(int score)
+        private static void EnterScoreBoard(int score)
         {
             Console.Write("Please enter your name for the top scoreboard: ");
             string name = Console.ReadLine();
@@ -142,7 +148,7 @@
             }
             SortAndPrintScoreBoard();
         }
-        static void SortAndPrintScoreBoard()
+        private static void SortAndPrintScoreBoard()
         {
             foreach (var pair in topScoreBoard)
             {
@@ -159,7 +165,7 @@
             }
             sortedDict.Clear();
         }
-        static void Main()
+        private static void Main()
         {
             StartGame();
 
