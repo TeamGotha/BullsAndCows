@@ -1,0 +1,5 @@
+D:\Github\TeamWorkHQC\trunk\BullsAndCows.Utils\bin\Debug\BullsAndCows.Utils.dll
+D:\Github\TeamWorkHQC\trunk\BullsAndCows.Utils\bin\Debug\BullsAndCows.Utils.pdb
+D:\Github\TeamWorkHQC\trunk\BullsAndCows.Utils\obj\Debug\BullsAndCows.Utils.csprojResolveAssemblyReference.cache
+D:\Github\TeamWorkHQC\trunk\BullsAndCows.Utils\obj\Debug\BullsAndCows.Utils.dll
+D:\Github\TeamWorkHQC\trunk\BullsAndCows.Utils\obj\Debug\BullsAndCows.Utils.pdb
