@@ -38,24 +38,18 @@
 
         private void AddScoreInternal(string name, int score)
         {
+            this.CheckScore(score);
+           //his.Results.Add(name, score);
             if (!this.Results.ContainsKey(name))
             {
-                throw new ArgumentException("Player name does not exist");
+                this.Results.Add(name, score);
             }
-
-            var playerScore = this.Results[name];
-            this.CheckScore(score);
-            this.Results[name] = playerScore > score ? playerScore : score;
-        }
-
-        public void AddNewPlayerScore(string name, int score)
-        {
-            if (this.Results.ContainsKey(name))
+            else
             {
-                throw new ArgumentException("Player name already exists.");
+                var playerScore = this.Results[name];
+                this.Results[name] = playerScore > score ? playerScore : score;
             }
-            this.CheckScore(score);
-            this.Results.Add(name, score);
+            
         }
 
         private void CheckScore(int score)

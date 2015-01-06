@@ -42,6 +42,8 @@ namespace Engine
 
             while (true)
             {
+                this.bulls = 0;
+                this.cows = 0;
                 var turnMessage = ConfigReader.GetConfigString("Turn Message");
                 renderer.PrintLineMessage(turnMessage);
 
@@ -64,9 +66,9 @@ namespace Engine
                             return;
                         }
                     case "top":
-                        {
-
-                        }
+                    {
+                        PrintScoreboard();
+                    }
                         break;
                     case "exit":
                         {
@@ -84,11 +86,16 @@ namespace Engine
                                 continue;
                             }
                             this.CalculateBullsAndCows(this.secretNumber, input, ref this.bulls, ref this.cows);
+                            this.attempts++;
                             if (this.secretNumber == input)
                             {
-                                if (this.attempts > 0)
+                                if (this.cheatCounter > 0)
                                 {
-                                    //Console.WriteLine("Congratulations! You guessed the secret number in {0} attempts and {1} cheats.", count1, count2);
+                                    var message = ConfigReader.GetConfigString("Win Message");
+                                    renderer.PrintLineMessage(message, this.attempts, this.cheatCounter);
+                                    var secondMessage = ConfigReader.GetConfigString("Cheater Leaderboard Message");
+                                    renderer.PrintLineMessage(secondMessage);
+                                    PrintScoreboard();
                                     //Console.WriteLine("You are not allowed to enter the top scoreboard.");
                                     //SortAndPrintScoreBoard();
                                     //Console.WriteLine();
@@ -96,17 +103,32 @@ namespace Engine
                                 }
                                 else
                                 {
-                                    //Console.WriteLine("Congratulations! You guessed the secret number in {0} attempts.", count1);
-                                    //EnterScoreBoard(count1);
+                                    var message = ConfigReader.GetConfigString("Win Message");
+                                    renderer.PrintLineMessage(message, this.attempts, this.cheatCounter);
+                                    var secondMessage = ConfigReader.GetConfigString("Enter Name Message");
+                                    renderer.PrintLineMessage(secondMessage);
+                                    var name = this.ReadInput();
+                                    scoreboard.AddScore(name, this.attempts);
+                                    PrintScoreboard();
                                     PlayAgain();
                                 }
-                                continue;
+                                
                             }
-                            this.attempts += 1;
+                            else
+                            {
+                                var message = ConfigReader.GetConfigString("Cowns and Bulls Message");
+                                renderer.PrintLineMessage(message, this.bulls, this.cows);
+                            }
                         }
                         break;
                 }
             }
+        }
+
+        private void PrintScoreboard()
+        {
+            var results = scoreboard.Results;
+            renderer.PrintHighscore(results);
         }
 
         private void StartGame()
@@ -127,7 +149,7 @@ namespace Engine
                 if (guessNumber[i].Equals(secretNumber[i]))
                 {
                     bullIndexes.Add(i);
-                    bulls += 1;
+                    bulls ++;
                 }
             }
 
