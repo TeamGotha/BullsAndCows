@@ -39,10 +39,9 @@
         private void AddScoreInternal(string name, int score)
         {
             this.CheckScore(score);
-           //his.Results.Add(name, score);
             if (!this.Results.ContainsKey(name))
             {
-                this.Results.Add(name, score);
+                this.results.Add(name, score);
             }
             else
             {
