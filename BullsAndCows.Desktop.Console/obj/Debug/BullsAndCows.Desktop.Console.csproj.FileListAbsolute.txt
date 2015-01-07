@@ -8,3 +8,6 @@ D:\Github\TeamWorkHQC\trunk\BullsAndCows.Desktop.Console\bin\Debug\Engine.pdb
 D:\Github\TeamWorkHQC\trunk\BullsAndCows.Desktop.Console\obj\Debug\BullsAndCows.Desktop.Console.csprojResolveAssemblyReference.cache
 D:\Github\TeamWorkHQC\trunk\BullsAndCows.Desktop.Console\obj\Debug\BullsAndCows.Desktop.Console.exe
 D:\Github\TeamWorkHQC\trunk\BullsAndCows.Desktop.Console\obj\Debug\BullsAndCows.Desktop.Console.pdb
+C:\Users\Asus-X550V\Documents\BullsAndCows\BullsAndCows.Desktop.Console\bin\Debug\BullsAndCows.Desktop.Console.exe.config
+C:\Users\Asus-X550V\Documents\BullsAndCows\BullsAndCows.Desktop.Console\obj\Debug\BullsAndCows.Desktop.Console.exe
+C:\Users\Asus-X550V\Documents\BullsAndCows\BullsAndCows.Desktop.Console\obj\Debug\BullsAndCows.Desktop.Console.pdb
