@@ -46,7 +46,7 @@
             else
             {
                 var playerScore = this.Results[name];
-                this.Results[name] = playerScore > score ? playerScore : score;
+                this.results[name] = (playerScore > score ? playerScore : score);
             }
             
         }

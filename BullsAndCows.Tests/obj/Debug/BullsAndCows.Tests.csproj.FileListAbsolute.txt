@@ -1,0 +1,9 @@
+D:\Github\TeamWorkHQC\trunk\BullsAndCows.Tests\obj\Debug\BullsAndCows.Tests.csprojResolveAssemblyReference.cache
+D:\Github\TeamWorkHQC\trunk\BullsAndCows.Tests\bin\Debug\BullsAndCows.Tests.dll
+D:\Github\TeamWorkHQC\trunk\BullsAndCows.Tests\bin\Debug\BullsAndCows.Tests.pdb
+D:\Github\TeamWorkHQC\trunk\BullsAndCows.Tests\bin\Debug\BullsAndCows.Utils.dll
+D:\Github\TeamWorkHQC\trunk\BullsAndCows.Tests\bin\Debug\Engine.dll
+D:\Github\TeamWorkHQC\trunk\BullsAndCows.Tests\bin\Debug\BullsAndCows.Utils.pdb
+D:\Github\TeamWorkHQC\trunk\BullsAndCows.Tests\bin\Debug\Engine.pdb
+D:\Github\TeamWorkHQC\trunk\BullsAndCows.Tests\obj\Debug\BullsAndCows.Tests.dll
+D:\Github\TeamWorkHQC\trunk\BullsAndCows.Tests\obj\Debug\BullsAndCows.Tests.pdb

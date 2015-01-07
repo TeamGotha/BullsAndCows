@@ -81,11 +81,11 @@ namespace Engine
                         {
                             if (!this.CheckInput(input))
                             {
-                                string errorMsg = ConfigReader.GetConfigString("Error Message");
-                                renderer.PrintLineMessage(errorMsg);
-                                continue;
+//                                string errorMsg = ConfigReader.GetConfigString("Error Message");
+//                                renderer.PrintLineMessage(errorMsg);
+                                throw new ArgumentException("Incorrect guess or command!");
                             }
-                            this.CalculateBullsAndCows(this.secretNumber, input, ref this.bulls, ref this.cows);
+                            this.CalculateBullsAndCows(this.secretNumber, input);
                             this.attempts++;
                             if (this.secretNumber == input)
                             {
@@ -140,7 +140,7 @@ namespace Engine
             renderer.PrintLineMessage(helpMessage);
         }
 
-        private void CalculateBullsAndCows(string secretNumber, string guessNumber, ref int bulls, ref int cows)
+        public int[] CalculateBullsAndCows(string secretNumber, string guessNumber)
         {
             var bullIndexes = new List<int>();
             var cowIndexes = new List<int>();
@@ -149,7 +149,7 @@ namespace Engine
                 if (guessNumber[i].Equals(secretNumber[i]))
                 {
                     bullIndexes.Add(i);
-                    bulls ++;
+                    this.bulls ++;
                 }
             }
 
@@ -162,12 +162,13 @@ namespace Engine
                         if (guessNumber[i].Equals(secretNumber[index]))
                         {
                             cowIndexes.Add(index);
-                            cows++;
+                            this.cows++;
                             break;
                         }
                     }
                 }
             }
+            return new int[]{this.bulls, this.cows};
         }
 
         private char[] RevealNumberAtRandomPosition(string secretnumber, char[] cheatNumber)
